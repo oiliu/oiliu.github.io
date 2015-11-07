@@ -5,26 +5,13 @@
 	<title>jquery</title>
 	<script src="http://jquery.com/jquery-wp-content/themes/jquery/js/jquery-1.11.2.min.js"></script>
 	<script type="text/javascript">
-	
-$("div").click(function(){
-  if ( $(this).hasClass("protected") )
-    $(this)
-      .animate({ left: -10 })
-      .animate({ left: 10 })
-      .animate({ left: -10 })
-      .animate({ left: 10 })
-      .animate({ left: 0 });
-});
+	$(function(){
+		alert('1');
+	})
 	</script>
-	<style type="text/css">
-		div{
-			width:100px;
-			height: 100px;
-			background-color:red;
-		}
-	</style>
+
 </head>
 <body>
-<div class="protected"></div><div></div>
+<h1>嘿嘿，新的blog地址，</h1>
 </body>
 </html>
