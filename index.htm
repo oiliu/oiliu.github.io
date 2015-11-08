@@ -1,19 +1,46 @@
 <!DOCTYPE html>
 <html charset="utf-8">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>shiaqiang'blog</title>
-<script src="http://jquery.com/jquery-wp-content/themes/jquery/js/jquery-1.11.2.min.js"></script>
-<script type="text/javascript">
-	$(function(){
-		alert('1');
-	})
-</script>
-<style>
-	*{margin:0px;padding:0px;}
-</style>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>The Matrix for Practice</title>
+  <script src="http://jquery.com/jquery-wp-content/themes/jquery/js/jquery-1.11.2.min.js"></script>
+  <style type="text/css">
+    *{margin: 0 auto;padding: 0 auto;}
+    body{background: black;overflow: hidden;}
+    h1{text-align: center;color: green;text-transform: uppercase;}
+  </style>
 </head>
-<body style="text-align:center">
-<h1>嘿嘿，新的blog地址，</h1>
+<body>
+  <h1>the matrix</h1>
+  <canvas id="matrix"></canvas>
+  <script type="text/javascript">
+    var matrix=document.getElementById("matrix");
+    	var context=matrix.getContext("2d");
+    matrix.height=window.innerHeight;
+    matrix.width=window.innerWidth;
+    	var drop=[];
+    	var font_size=16;
+    	var columns=matrix.width/font_size;
+    	for(var i=0;i<columns;i++)
+    		drop[i]=1;
+    	
+    	function drawMatrix(){
+    
+    	context.fillStyle="rgba(0, 0, 0, 0.1)"; 
+    	context.fillRect(0,0,matrix.width,matrix.height);
+    
+    	context.fillStyle="green";
+    	context.font=font_size+"px";
+    	for(var i=0;i<columns;i++){
+    		context.fillText(Math.floor(Math.random()*2),i*font_size,drop[i]*font_size);/*get 0 and 1*/
+    
+    		if(drop[i]*font_size>(matrix.height*2/3)&&Math.random()>0.85)/*reset*/
+    			drop[i]=0;
+    		drop[i]++;
+    	}
+    }
+    	setInterval(drawMatrix,40);
+  </script>
 </body>
+
 </html>
