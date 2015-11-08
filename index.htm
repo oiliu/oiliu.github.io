@@ -7,11 +7,21 @@
   <style type="text/css">
     *{margin: 0 auto;padding: 0 auto;}
     body{background: black;overflow: hidden;}
+	.divName{
+		position: fixed;
+		color: maroon;
+		font-size: 38px;
+	}
   </style>
 </head>
 <body>
+	<div class="divName">shiaqiang's</div>
   <canvas id="matrix"></canvas>
   <script type="text/javascript">
+  $(function(){
+	  $(".divName").css("top",window.innerHeight-60);
+	  $(".divName").css("left",10);
+  });
     var matrix=document.getElementById("matrix");
     	var context=matrix.getContext("2d");
     matrix.height=window.innerHeight;
@@ -35,8 +45,8 @@
     		if(drop[i]*font_size>(matrix.height*2/3)&&Math.random()>0.85)/*reset*/
     			drop[i]=0;
     		drop[i]++;
-    	}
-    }
+		}
+		}
     	setInterval(drawMatrix,40);
   </script>
 </body>
