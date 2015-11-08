@@ -19,8 +19,8 @@
   <canvas id="matrix"></canvas>
   <script type="text/javascript">
   $(function(){
-	  $(".divName").css("top",window.innerHeight-60);
-	  $(".divName").css("left",10);
+	  $(".divName").css("top",window.innerHeight/2-$(".divName").height()/2-50);
+	  $(".divName").css("left",window.innerWidth/2-$(".divName").width()/2);
   });
     var matrix=document.getElementById("matrix");
     	var context=matrix.getContext("2d");
