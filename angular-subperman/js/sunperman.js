@@ -44,6 +44,6 @@ myModule.directive("light", function () {
         require: "^superman",
         link: function (scope,element,attrs,su) {
             su.addLight();
-        }
+        } 
     }
 });
