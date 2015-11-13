@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html charset="utf-8">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>shiaqiang's blog</title>
+    <script src="http://jquery.com/jquery-wp-content/themes/jquery/js/jquery-1.11.2.min.js"></script>
+    <script src="js/index.js"></script>
+    <style type="text/css">
+        * {
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        body {
+            background: black;
+            overflow: hidden;
+        }
+
+        a, a:hover {
+            color: maroon;
+            text-decoration: none;
+        }
+
+        .divName {
+            text-align: center;
+            position: fixed;
+            color: maroon;
+            font: 38px AlexBrush-Regular, Helvetica, sans-serif;
+        }
+
+        @font-face {
+            font-family: "AlexBrush-Regular";
+            src: url("font/Chunkfive.otf");
+        }
+        #cas {
+            float:right;
+        }
+    </style>
+</head>
+<body>
+    <div class="divName">
+        <a href="angular-subperman/subperman.html">superMan</a><br />
+        shiaqiang's
+    </div>
+    <canvas id="matrix"></canvas>
+    <script type="text/javascript">
+        $(function () {
+            $(".divName").css("top", window.innerHeight / 2 - $(".divName").height() / 2 - 50);
+            $(".divName").css("left", window.innerWidth / 2 - $(".divName").width() / 2);
+        });
+        var matrix = document.getElementById("matrix");
+        var context = matrix.getContext("2d");
+        matrix.height = window.innerHeight;
+        matrix.width = window.innerWidth / 2;
+        var drop = [];
+        var font_size = 16;
+        var columns = matrix.width / font_size;
+        for (var i = 0; i < columns; i++)
+            drop[i] = 1;
+
+        function drawMatrix() {
+
+            context.fillStyle = "rgba(0, 0, 0, 0.1)";
+            context.fillRect(0, 0, matrix.width, matrix.height);
+            context.fillStyle = "green";
+            context.font = font_size + "px";
+            for (var i = 0; i < columns; i++) {
+                context.fillText(Math.floor(Math.random() * 2), i * font_size, drop[i] * font_size);/*get 0 and 1*/
+
+                if (drop[i] * font_size > (matrix.height * 2 / 3) && Math.random() > 0.85)/*reset*/
+                    drop[i] = 0;
+                drop[i]++;
+            }
+        }
+        setInterval(drawMatrix, 40);
+    </script>
+    <canvas id="cas" ></canvas>
+    <script src="js/nets.js"></script>
+</body>
+
+</html>
