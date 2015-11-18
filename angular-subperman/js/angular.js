@@ -1424,8 +1424,10 @@ function angularInit(element, bootstrap) {
     }
   });
   if (appElement) {
-    config.strictDi = getNgAttribute(appElement, "strict-di") !== null;
-    bootstrap(appElement, module ? [module] : [], config);
+      config.strictDi = getNgAttribute(appElement, "strict-di") !== null;
+      bootstrap(appElement, module ? [module] : [], config);
+  } else {
+      console.log('no ng-app');
   }
 }
 
