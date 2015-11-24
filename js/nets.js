@@ -3,7 +3,7 @@ var ctx = canvas.getContext("2d");
 resize2();
 $(window).resize(resize2);
 function resize2() {
-    canvas.width = window.innerWidth / 2;
+    canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     var RAF = (function () {
         return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function (callback) {

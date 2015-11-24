@@ -41,6 +41,14 @@
             position: fixed;
             top: 10px;
             right: 10px;
+            
+        }
+        /*
+            
+        */
+        #matrix, #cas {
+            position:absolute;
+            float:left
         }
     </style>
 </head>
@@ -58,7 +66,7 @@
             var matrix = document.getElementById("matrix");
             var context = matrix.getContext("2d");
             matrix.height = window.innerHeight;
-            matrix.width = window.innerWidth / 2;
+            matrix.width = window.innerWidth;
             var drop = [];
             var font_size = 16;
             var columns = matrix.width / font_size;
