@@ -81,8 +81,7 @@
                 context.font = font_size + "px";
                 for (var i = 0; i < columns; i++) {
                     context.fillText(Math.floor(Math.random() * 2), i * font_size, drop[i] * font_size);/*get 0 and 1*/
-
-                    if (drop[i] * font_size > (matrix.height * 2 / 3) && Math.random() > 0.85)/*reset*/
+                    if (drop[i] * font_size > (matrix.height * 2 / 3) && Math.random() > 0.85)        /*reset*/
                         drop[i] = 0;
                     drop[i]++;
                 }
