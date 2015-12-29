@@ -1,0 +1,44 @@
+* {
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        body {
+            background: black;
+            overflow: hidden;
+        }
+
+        a, a:hover {
+            color: maroon;
+            text-decoration: none;
+        }
+
+        .divName {
+            text-align: center;
+            position: fixed;
+            color: maroon;
+            font: 38px AlexBrush-Regular, Helvetica, sans-serif;
+            z-index: 99;
+        }
+
+        @font-face {
+            font-family: "AlexBrush-Regular";
+            src: url("font/Chunkfive.otf");
+        }
+
+        #cas {
+            float: right;
+        }
+
+        .divMusic {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+        }
+        /*
+
+        */
+        #matrix, #cas {
+            position: absolute;
+            float: left;
+        }
