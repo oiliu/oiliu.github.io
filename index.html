@@ -6,21 +6,29 @@
     <title>shiaqiang's blog</title>
     <script src="js/jquery-1.11.2.min.js"></script>
     <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101282842" data-redirecturi="http://oiliu.github.io/qc_back.html" charset="utf-8"></script>
+    <script src="js/lotqq.js"></script>
     <script type="text/javascript">
         QC.Login({                  //按默认样式插入QQ登录按钮
             btnId: "qq_login_btn"	//插入按钮的节点id
         });
         $(function () {
             //获取Authorization Code
-            var AuthorizationCode = "";
-            $.ajax({
-                type: "GET",
-                dataType: "jsonp",
-                url: "https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=101282842&redirect_uri=" + encodeURI("http://oiliu.github.io/qc_back.html") + "&state=test&scope=get_user_info",
-                success: function (data) {
-                    console.log("Authorization Code：" + data);
-                }
+            $.lotqq('101282842', 'http://oiliu.github.io/qc_back.html', 'qq_login_btn', function (data) {
+                //回调函数，进行一些你需要的存储~~~（data数组有你需要的数据）
+                console.log('Name:' + data.Name);
+                console.log('OpenId:' + data.OpenId);
+                console.log('AccessToken:' + data.AccessToken);
+                console.log('Figureurl:' + data.Figureurl);
             });
+            //var AuthorizationCode = "";
+            //$.ajax({
+            //    type: "GET",
+            //    dataType: "jsonp",
+            //    url: "https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=101282842&redirect_uri=" + encodeURI("http://oiliu.github.io/qc_back.html") + "&state=test&scope=get_user_info",
+            //    success: function (data) {
+            //        console.log("Authorization Code：" + data);
+            //    }
+            //});
             //$("button").click(function () {
             //    $.ajax({
             //        type: "GET",
