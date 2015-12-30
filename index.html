@@ -14,7 +14,11 @@
             $("button").click(function () {
                 $.ajax({
                     type: "GET",
-                    url: "https://graph.qq.com/user/get_user_info?oauth_consumer_key=100330589&access_token=8B4B49362A5BCEE7A39570D21854F35C&openid=3043C566BC7BA38AD0FEFCE31D7F421E&format=json",
+                    url: "https://graph.qq.com/user/get_user_info?" +
+                        "oauth_consumer_key=101282842&" +
+                        "access_token=8B4B49362A5BCEE7A39570D21854F35C&" +
+                        "openid=3043C566BC7BA38AD0FEFCE31D7F421E&" +
+                        "format=json",
                     success: function (data) {
                         console.log(data);
                     }
