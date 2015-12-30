@@ -15,6 +15,7 @@
             var AuthorizationCode = "";
             $.ajax({
                 type: "GET",
+                dataType: "jsonp",
                 url: "https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=101282842&redirect_uri=" + encodeURI("http://oiliu.github.io/qc_back.html") + "&state=test&scope=get_user_info",
                 success: function (data) {
                     console.log("Authorization Code：" + data);
