@@ -12,33 +12,24 @@
             btnId: "qq_login_btn"	//插入按钮的节点id
         });
         $(function () {
-            //获取Authorization Code
             $.lotqq('101282842', 'http://oiliu.github.io/qc_back.html', 'qq_login_btn', function (data) {
                 //回调函数，进行一些你需要的存储~~~（data数组有你需要的数据）
                 console.log('Name:' + data.Name);
                 console.log('OpenId:' + data.OpenId);
                 console.log('AccessToken:' + data.AccessToken);
                 console.log('Figureurl:' + data.Figureurl);
+
+                console.log(data);
+                $.ajax({
+                    type: "GET",
+                    dataType:"jsonp",
+                    url: "https://graph.qq.com/user/get_user_info?oauth_consumer_key=101282842&access_token=" + data.AccessToken
+                        + "&openid=" + data.OpenId + "&format=json",
+                    success: function (data) {
+                        console.log(data);
+                    }
+                });
             });
-            //var AuthorizationCode = "";
-            //$.ajax({
-            //    type: "GET",
-            //    dataType: "jsonp",
-            //    url: "https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=101282842&redirect_uri=" + encodeURI("http://oiliu.github.io/qc_back.html") + "&state=test&scope=get_user_info",
-            //    success: function (data) {
-            //        console.log("Authorization Code：" + data);
-            //    }
-            //});
-            //$("button").click(function () {
-            //    $.ajax({
-            //        type: "GET",
-            //        dataType:"jsonp",
-            //        url: "https://graph.qq.com/user/get_user_info?oauth_consumer_key=101282842&access_token=8B4B49362A5BCEE7A39570D21854F35C&openid=3043C566BC7BA38AD0FEFCE31D7F421E&format=json",
-            //        success: function (data) {
-            //            console.log(data);
-            //        }
-            //    });
-            //});
         })
     </script>
 </head>
