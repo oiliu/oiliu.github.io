@@ -12,6 +12,11 @@
             btnId: "qq_login_btn"	//插入按钮的节点id
         });
         $(function () {
+            $("button").on("click", function () {
+                getMess();
+            })
+        });
+        function getMess() {
             $.lotqq('101282842', 'http://oiliu.github.io/qc_back.html', 'qq_login_btn', function (data) {
                 //回调函数，进行一些你需要的存储~~~（data数组有你需要的数据）
                 console.log('Name:' + data.Name);
@@ -22,7 +27,7 @@
                 console.log(data);
                 $.ajax({
                     type: "GET",
-                    dataType:"jsonp",
+                    dataType: "jsonp",
                     url: "https://graph.qq.com/user/get_user_info?oauth_consumer_key=101282842&access_token=" + data.AccessToken
                         + "&openid=" + data.OpenId + "&format=json&state=test",
                     success: function (data) {
@@ -30,7 +35,7 @@
                     }
                 });
             });
-        })
+        }
     </script>
 </head>
 <body>
