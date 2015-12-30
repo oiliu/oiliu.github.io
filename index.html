@@ -11,25 +11,26 @@
             btnId: "qq_login_btn"	//插入按钮的节点id
         });
         $(function () {
-            var accessToken = "";
+            //获取Authorization Code
+            var AuthorizationCode = "";
             $.ajax({
                 type: "GET",
                 dataType: "jsonp",
                 url: "https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=101282842&redirect_uri=" + encodeURI("http://oiliu.github.io/qc_back.html") + "&state=test&scope=get_user_info",
                 success: function (data) {
-                    console.log(data);
+                    console.log("Authorization Code：" + data);
                 }
             });
-            $("button").click(function () {
-                $.ajax({
-                    type: "GET",
-                    dataType:"jsonp",
-                    url: "https://graph.qq.com/user/get_user_info?oauth_consumer_key=101282842&access_token=8B4B49362A5BCEE7A39570D21854F35C&openid=3043C566BC7BA38AD0FEFCE31D7F421E&format=json",
-                    success: function (data) {
-                        console.log(data);
-                    }
-                });
-            });
+            //$("button").click(function () {
+            //    $.ajax({
+            //        type: "GET",
+            //        dataType:"jsonp",
+            //        url: "https://graph.qq.com/user/get_user_info?oauth_consumer_key=101282842&access_token=8B4B49362A5BCEE7A39570D21854F35C&openid=3043C566BC7BA38AD0FEFCE31D7F421E&format=json",
+            //        success: function (data) {
+            //            console.log(data);
+            //        }
+            //    });
+            //});
         })
     </script>
 </head>
