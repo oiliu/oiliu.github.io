@@ -29,7 +29,7 @@
                     type: "GET",
                     dataType: "jsonp",
                     url: "https://graph.qq.com/user/get_user_info?oauth_consumer_key=101282842&access_token=" + data.AccessToken
-                        + "&openid=" + data.OpenId + "&format=text&state=test",
+                        + "&openid=" + data.OpenId + "&format=jsonp&state=test",
                     success: function (data) {
                         console.log(data);
                     }
