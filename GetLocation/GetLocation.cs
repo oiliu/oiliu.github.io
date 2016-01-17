@@ -31,7 +31,7 @@
             request = (System.Net.HttpWebRequest)WebRequest.Create(strURL);
             request.Method = "GET";
             // 添加header
-            request.Headers.Add("apikey", "5e62b542675667357a504335b4a9da01");
+            request.Headers.Add("apikey", "apikey");
             System.Net.HttpWebResponse response;
             response = (System.Net.HttpWebResponse)request.GetResponse();
             System.IO.Stream s;
