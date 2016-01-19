@@ -20,11 +20,13 @@
 				$("#img1").css("display","none");
 				$("#img2").css("display","block");
 				$("#divButton").hide();
+				$("body").css("background-color","#001F4C")
 			}else
 			{
 				$("#img1").css("display","block");
 				$("#img2").css("display","none");
 				$("#divButton").show();
+				$("body").css("background-color","#0348AF")
 			}
 			$("#divButton").width($(window).width());
 
@@ -34,13 +36,12 @@
 		*{margin:0px;padding:0px;}
 		body{
 			overflow:hidden;
-			background-color: #0348AF;
 		}
 		#divButton{
 			margin: 0 auto;
 			height: 100px;
 			position: fixed;
-			top: 300px;
+			top: 273px;
 			text-align: center;
 		}
 		ul li{
@@ -48,8 +49,8 @@
 		}
 		.imgBtn{
 			border: 0px;
-			width: 100px;
-			height: 29px;
+			width: 136px;
+			height: 39px;
 			margin-bottom: 5px
 		}
 	</style>
