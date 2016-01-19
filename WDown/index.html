@@ -19,10 +19,12 @@
 			{
 				$("#img1").css("display","none");
 				$("#img2").css("display","block");
+				$("#divButton").hide();
 			}else
 			{
 				$("#img1").css("display","block");
 				$("#img2").css("display","none");
+				$("#divButton").show();
 			}
 			$("#divButton").width($(window).width());
 
@@ -39,6 +41,9 @@
 			position: fixed;
 			top: 300px;
 			text-align: center;
+		}
+		ul li{
+			list-style-type: none;
 		}
 	</style>
 </head>
