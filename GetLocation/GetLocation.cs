@@ -51,7 +51,9 @@
             string tempip = "";
             try
             {
-                WebRequest wr = WebRequest.Create("http://www.ip138.com/ip2city.asp");
+                //http://1212.ip138.com/ic.asp
+                //http://city.ip138.com/ip2city.asp
+                HttpWebRequest wr = (HttpWebRequest)WebRequest.Create("http://1212.ip138.com/ic.asp");
                 Stream s = wr.GetResponse().GetResponseStream();
                 StreamReader sr = new StreamReader(s, Encoding.Default);
                 string all = sr.ReadToEnd(); //读取网站的数据
