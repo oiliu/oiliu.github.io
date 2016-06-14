@@ -7,27 +7,9 @@
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/index.js"></script>
     <link href="css/index.css" rel="stylesheet" />
-    <script type="text/javascript" src="js/qc_loader.js" data-appid="101282842" data-redirecturi="qc_back.html" charset="utf-8"></script>
-    <script type="text/javascript">
-        QC.Login({                  //按默认样式插入QQ登录按钮
-            btnId: "qq_login_btn"	//插入按钮的节点id
-        });
-        $(function () {
-            $("button").click(function () {
-                $.ajax({
-                    type: "GET",
-                    url: "https://graph.qq.com/user/get_user_info?oauth_consumer_key=100330589&access_token=8B4B49362A5BCEE7A39570D21854F35C&openid=3043C566BC7BA38AD0FEFCE31D7F421E&format=json",
-                    success: function (data) {
-                        console.log(data);
-                    }
-                });
-            });
-        })
     </script>
 </head>
 <body>
-    <span id="qq_login_btn"></span>
-    <button>获取</button>
     <div class="divName">
         <a href="angular-subperman">superMan</a><br />
         shiaqiang's<br/>
