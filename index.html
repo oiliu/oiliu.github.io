@@ -1,61 +1,14 @@
 ﻿<!DOCTYPE html>
 <html charset="utf-8">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta property="qc:admins" content="71140565341567140526177" />
     <title>shiaqiang's blog</title>
-    <script src="js/jquery-1.11.2.min.js"></script>
-    <script src="js/index.js"></script>
-    <link href="css/index.css" rel="stylesheet" />
+    <script src="http://cdn.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            window.location.href="/slqPIC/";
+        });
     </script>
 </head>
 <body>
-    <div class="divName">
-        <a href="angular-subperman">superMan</a><br />
-        shiaqiang's<br/>
-        
-    </div>
-    <canvas id="matrix"></canvas>
-    <script type="text/javascript">
-
-        function divNameResize() {
-            $(".divName").css("top", window.innerHeight / 2 - $(".divName").height() / 2 - 50);
-            $(".divName").css("left", window.innerWidth / 2 - $(".divName").width() / 2);
-            var matrix = document.getElementById("matrix");
-            var context = matrix.getContext("2d");
-            matrix.height = window.innerHeight;
-            matrix.width = window.innerWidth;
-            var drop = [];
-            var font_size = 16;
-            var columns = matrix.width / font_size;
-            for (var i = 0; i < columns; i++)
-                drop[i] = 1;
-
-            function drawMatrix() {
-
-                context.fillStyle = "rgba(0, 0, 0, 0.1)";
-                context.fillRect(0, 0, matrix.width, matrix.height);
-                context.fillStyle = "green";
-                context.font = font_size + "px";
-                for (var i = 0; i < columns; i++) {
-                    context.fillText(Math.floor(Math.random() * 2), i * font_size, drop[i] * font_size);/*get 0 and 1*/
-                    if (drop[i] * font_size > (matrix.height * 2 / 3) && Math.random() > 0.85)        /*reset*/
-                        drop[i] = 0;
-                    drop[i]++;
-                }
-            }
-            setInterval(drawMatrix, 40);
-        }
-        $(function () {
-            divNameResize();
-            $(window).resize(divNameResize);
-        });
-    </script>
-    <canvas id="cas"></canvas>
-    <script src="js/nets.js"></script>
-    <div class="divMusic">
-        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="http://music.163.com/outchain/player?type=2&id=168091&auto=1&height=66"></iframe>
-    </div>
 </body>
 </html>
-<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cspan id='cnzz_stat_icon_1256841912'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1256841912%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
