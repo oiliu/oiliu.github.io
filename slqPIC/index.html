@@ -1,75 +1,69 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<meta name="keywords" content="JS´úÂë,{keyword},JS¹ã¸æ´úÂë,JSÌØÐ§´úÂë" />
-<meta name="description" content="´Ë´úÂëÄÚÈÝÎª{title}£¬ÊôÓÚÕ¾³¤³£ÓÃ´úÂë£¬¸ü¶à{keyword}´úÂëÇë·ÃÎÊÅ£Í¼¿âJS´úÂëÆµµÀ¡£" />
-<title>{title}_Å£Í¼¿â</title>
+    <title>{image}</title>
+    <meta charset="UTF-8" />
+    <script src="http://cdn.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/elastislide.css" />
+    <noscript>
+        <style>
+            .es-carousel ul {
+                display: block;
+            }
+        </style>
+    </noscript>
+    <script id="img-wrapper-tmpl" type="text/x-jquery-tmpl">
+        <div class="rg-image-wrapper">
+            {{if itemsCount > 1}}
+            <div class="rg-image-nav">
+                <a href="#" class="rg-image-nav-prev">Previous Image</a>
+                <a href="#" class="rg-image-nav-next">Next Image</a>
+            </div>
+            {{/if}}
+            <div class="rg-image" style="width:70%;margin:0 auto"></div>
+            <div class="rg-loading"></div>
+            <div class="rg-caption-wrapper">
+                <div class="rg-caption" style="display:none;">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            for (var i = 1; i <= 152; i++) {
+                $("#ul_imgs").append('<li><a href="#"><img src="images/thumbs/img' + i + '.jpg" data-large="images/img/img' + i
+                    + '.jpg" alt="image01" data-description="if time could stop at the moment when we first met" /></a></li>');
+            }
+        })
+    </script>
 </head>
-        <title>Responsive Image Gallery</title>
-		<meta charset="UTF-8" />
-        <script src="http://cdn.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="css/demo.css" />
-		<link rel="stylesheet" type="text/css" href="css/style.css" />
-		<link rel="stylesheet" type="text/css" href="css/elastislide.css" />
-		<noscript>
-			<style>
-				.es-carousel ul{
-					display:block;
-				}
-			</style>
-		</noscript>
-		<script id="img-wrapper-tmpl" type="text/x-jquery-tmpl">	
-			<div class="rg-image-wrapper">
-				{{if itemsCount > 1}}
-					<div class="rg-image-nav">
-						<a href="#" class="rg-image-nav-prev">Previous Image</a>
-						<a href="#" class="rg-image-nav-next">Next Image</a>
-					</div>
-				{{/if}}
-				<div class="rg-image" style="width:70%;margin:0 auto"></div>
-				<div class="rg-loading"></div>
-				<div class="rg-caption-wrapper">
-					<div class="rg-caption" style="display:none;">
-						<p></p>
-					</div>
-				</div>
-			</div>
-		</script>
-		<script type="text/javascript">
-			$(function(){
-				for (var i=1;i<=152;i++) {
-					$("#ul_imgs").append('<li><a href="#"><img src="images/thumbs/img'+i+'.jpg" data-large="images/img/img'+i
-						+'.jpg" alt="image01" data-description="if time could stop at the moment when we first met" /></a></li>');
-				}
-			})
-		</script>
-    </head>
-    <body>
-		<div class="container">
-			<div class="content">
-                <div id="rg-gallery" class="rg-gallery">
-					<div class="rg-thumbs">
-						<!-- Elastislide Carousel Thumbnail Viewer -->
-						<div class="es-carousel-wrapper">
-							<div class="es-nav">
-								<span class="es-nav-prev">Previous</span>
-								<span class="es-nav-next">Next</span>
-							</div>
-							<div class="es-carousel">
-								<ul id="ul_imgs">
-								</ul>
-							</div>
-						</div>
-						<!-- End Elastislide Carousel Thumbnail Viewer -->
-					</div><!-- rg-thumbs -->
-				</div><!-- rg-gallery -->
-			</div><!-- content -->
-		</div><!-- container -->
-		<script type="text/javascript" src="http://cdn.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
-		<script type="text/javascript" src="js/jquery.tmpl.min.js"></script>
-		<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-		<script type="text/javascript" src="js/jquery.elastislide.js"></script>
-		<script type="text/javascript" src="js/gallery.js"></script>
-    </body>
+<body>
+    <div class="container">
+        <div class="content">
+            <div id="rg-gallery" class="rg-gallery">
+                <div class="rg-thumbs">
+                    <!-- Elastislide Carousel Thumbnail Viewer -->
+                    <div class="es-carousel-wrapper">
+                        <div class="es-nav">
+                            <span class="es-nav-prev">Previous</span>
+                            <span class="es-nav-next">Next</span>
+                        </div>
+                        <div class="es-carousel">
+                            <ul id="ul_imgs"></ul>
+                        </div>
+                    </div>
+                    <!-- End Elastislide Carousel Thumbnail Viewer -->
+                </div><!-- rg-thumbs -->
+            </div><!-- rg-gallery -->
+        </div><!-- content -->
+    </div><!-- container -->
+    <script type="text/javascript" src="http://cdn.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery.tmpl.min.js"></script>
+    <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="js/jquery.elastislide.js"></script>
+    <script type="text/javascript" src="js/gallery.js"></script>
+</body>
 </html>
