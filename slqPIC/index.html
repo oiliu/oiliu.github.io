@@ -1,69 +1,106 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+﻿<!doctype html>
+<html>
 <head>
-    <title>{image}</title>
-    <meta charset="UTF-8" />
-    <script src="http://cdn.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/demo.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" type="text/css" href="css/elastislide.css" />
-    <noscript>
-        <style>
-            .es-carousel ul {
-                display: block;
+    <meta charset="utf-8">
+    <title>{ images }</title>
+    <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+    <script src="layer/layer.js"></script>
+    <style>
+        html {
+            background-color: #E3E3E3;
+            font-size: 14px;
+            color: #000;
+            font-family: '微软雅黑';
+        }
+
+        a, a:hover {
+            text-decoration: none;
+        }
+
+        .box {
+            padding: 20px;
+            background-color: #fff;
+            margin: 20px 30px;
+            border-radius: 5px;
+        }
+
+            .box a {
+                padding-right: 15px;
             }
-        </style>
-    </noscript>
-    <script id="img-wrapper-tmpl" type="text/x-jquery-tmpl">
-        <div class="rg-image-wrapper">
-            {{if itemsCount > 1}}
-            <div class="rg-image-nav">
-                <a href="#" class="rg-image-nav-prev">Previous Image</a>
-                <a href="#" class="rg-image-nav-next">Next Image</a>
-            </div>
-            {{/if}}
-            <div class="rg-image" style="width:70%;margin:0 auto"></div>
-            <div class="rg-loading"></div>
-            <div class="rg-caption-wrapper">
-                <div class="rg-caption" style="display:none;">
-                    <p></p>
-                </div>
-            </div>
-        </div>
-    </script>
+
+        #about_hide {
+            display: none;
+        }
+
+        .layer_text {
+            background-color: #fff;
+            padding: 20px;
+        }
+
+            .layer_text p {
+                margin-bottom: 10px;
+                text-indent: 2em;
+                line-height: 23px;
+            }
+
+        .button {
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+            line-height: 30px;
+            padding: 0 20px;
+            background-color: #56B4DC;
+            color: #fff;
+            font-size: 14px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-weight: normal;
+        }
+
+        .photos-demo img {
+            width: 200px;
+        }
+
+        .imgClass {
+            margin: 0 2px;
+        }
+
+        .imgTitle {
+            vertical-align: middle;
+            height: 60px;
+            width: 60px;
+            border-radius: 5px;
+            margin: 0 20px 0 10px;
+        }
+    </style>
     <script type="text/javascript">
         $(function () {
-            for (var i = 1; i <= 152; i++) {
-                $("#ul_imgs").append('<li><a href="#"><img src="images/thumbs/img' + i + '.jpg" data-large="images/img/img' + i
-                    + '.jpg" alt="image01" data-description="if time could stop at the moment when we first met" /></a></li>');
+            for (var i = 1; i <= 100; i++) {
+                $("#photosDemo").append('<img class="imgClass" layer-src="images/img/img' + i + '.jpg" layer-pid="" src="images/img/img' + i + '.jpg" alt="">');
             }
-        })
+        });
     </script>
 </head>
 <body>
-    <div class="container">
-        <div class="content">
-            <div id="rg-gallery" class="rg-gallery">
-                <div class="rg-thumbs">
-                    <!-- Elastislide Carousel Thumbnail Viewer -->
-                    <div class="es-carousel-wrapper">
-                        <div class="es-nav">
-                            <span class="es-nav-prev">Previous</span>
-                            <span class="es-nav-next">Next</span>
-                        </div>
-                        <div class="es-carousel">
-                            <ul id="ul_imgs"></ul>
-                        </div>
-                    </div>
-                    <!-- End Elastislide Carousel Thumbnail Viewer -->
-                </div><!-- rg-thumbs -->
-            </div><!-- rg-gallery -->
-        </div><!-- content -->
-    </div><!-- container -->
-    <script type="text/javascript" src="http://cdn.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
-    <script type="text/javascript" src="js/jquery.tmpl.min.js"></script>
-    <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-    <script type="text/javascript" src="js/jquery.elastislide.js"></script>
-    <script type="text/javascript" src="js/gallery.js"></script>
+    <div class="box">
+        <h2><img class="imgTitle" src="images/i.png" />风雨丛中住着一只南飞的雁,</h2>
+    </div>
+    <div class="box">
+        <div id="photosDemo" class="photos-demo"></div>
+    </div>
+    <div class="box" style="padding:0px;text-align:center">
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=52 src="http://music.163.com/outchain/player?type=2&id=29771418&auto=1&height=32"></iframe>
+    </div>
+    <script>
+        ; !function () {
+            layer.ready(function () {
+                //使用相册
+                layer.photos({
+                    photos: '#photosDemo'
+                });
+                layer.alert('用 Google-Chrome 有惊喜！');
+            });
+        }();
+    </script>
 </body>
 </html>
