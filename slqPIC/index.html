@@ -22,7 +22,7 @@
         });
     </script>
 </head>
-<body>
+<body style="overflow-y: hidden;">
     <div class="box">
         <h2><img class="imgTitle" src="images/i.png" />风雨丛中住着一只南飞的雁,</h2>
     </div>
@@ -38,9 +38,9 @@
     </div>
     <script>
         $(function () {
-            $('#boxContent').height($(window).height() - 330);
+            $('#boxContent').height($(window).height() - 315);
             $(window).resize(function () {
-                $('#boxContent').height($(window).height() - 330);
+                $('#boxContent').height($(window).height() - 315);
             });
         })
         ;!function () {
