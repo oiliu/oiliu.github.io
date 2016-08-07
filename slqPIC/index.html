@@ -6,7 +6,7 @@
     <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
     <script src="layer/layer.js"></script>
     <style>
-        html{background-color:#E3E3E3;font-size:14px;color:#000;font-family:'微软雅黑'}a,a:hover{text-decoration:none}.box{padding:20px;background-color:#fff;margin:20px 30px;border-radius:5px}.box a{padding-right:15px}#about_hide{display:none}.layer_text{background-color:#fff;padding:20px}.layer_text p{margin-bottom:10px;text-indent:2em;line-height:23px}.button{display:inline-block;line-height:30px;padding:0 20px;background-color:#56B4DC;color:#fff;font-size:14px;border-radius:3px;cursor:pointer;font-weight:400}.photos-demo img{width:285px}.imgClass{margin:0 2px}.imgTitle{vertical-align:middle;height:60px;width:60px;border-radius:5px;margin:0 20px 0 10px}
+        html{background-color:#E3E3E3;font-size:14px;color:#000;font-family:'微软雅黑'}a,a:hover{text-decoration:none}.box{padding:20px;background-color:#fff;margin:20px 30px;border-radius:5px}.box a{padding-right:15px}#about_hide{display:none}.layer_text{background-color:#fff;padding:20px}.layer_text p{margin-bottom:10px;text-indent:2em;line-height:23px}.button{display:inline-block;line-height:30px;padding:0 20px;background-color:#56B4DC;color:#fff;font-size:14px;border-radius:3px;cursor:pointer;font-weight:400}.imgClass{margin:0 2px}.imgTitle{vertical-align:middle;height:60px;width:60px;border-radius:5px;margin:0 20px 0 10px}
     </style>
     <script type="text/javascript">
         $(function () {
@@ -39,9 +39,10 @@
     <script>
         $(function () {
             $('#boxContent').height($(window).height() - 315);
+                $('.imgClass').height(($(window).height() - 315) / 3-3);
             $(window).resize(function () {
                 $('#boxContent').height($(window).height() - 315);
-                $('.imgClass').width($('#boxContent').height($(window).height() - 315) / 3 + 75);
+                $('.imgClass').height(($(window).height() - 315) / 3-3);
             });
         })
         ;!function () {
