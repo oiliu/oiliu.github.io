@@ -41,6 +41,8 @@
             $('#boxContent').height($(window).height() - 315);
             $(window).resize(function () {
                 $('#boxContent').height($(window).height() - 315);
+                var hei = $('#boxContent').height($(window).height() - 315);
+                $('.photos-demo img').width(hei/3+75);
             });
         })
         ;!function () {
