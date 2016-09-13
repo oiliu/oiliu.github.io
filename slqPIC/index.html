@@ -38,12 +38,15 @@
     </div>
     <script>
         $(function () {
-            $('#boxContent').height($(window).height() - 315);
-                $('.imgClass').height(($(window).height() - 315) / 3-3);
-            $(window).resize(function () {
+            if($(window).height() > 768)
+            {
                 $('#boxContent').height($(window).height() - 315);
                 $('.imgClass').height(($(window).height() - 315) / 3-3);
-            });
+                $(window).resize(function () {
+                    $('#boxContent').height($(window).height() - 315);
+                    $('.imgClass').height(($(window).height() - 315) / 3-3);
+                });
+            }
         })
         ;!function () {
             layer.ready(function () {
