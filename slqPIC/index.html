@@ -22,7 +22,7 @@
         });
     </script>
 </head>
-<body style="overflow-y: hidden;">
+<body>
     <div class="box">
         <h2><img class="imgTitle" src="images/i.png" />风雨丛中住着一只南飞的雁,</h2>
     </div>
@@ -52,7 +52,7 @@
                 system.ipad = (navigator.userAgent.match(/iPad/i) != null)?true:false; 
                 //跳转语句，如果是手机访问就自动跳转到wap.baidu.com页面 
                 if (system.win || system.mac || system.xll||system.ipad) { 
-                    $('#boxContent').height($(window).height() - 315);
+                    //$('#boxContent').height($(window).height() - 315);
                     $('.imgClass').height(($(window).height() - 315) / 3-3);
                     $(window).resize(function () {
                         $('#boxContent').height($(window).height() - 315);
