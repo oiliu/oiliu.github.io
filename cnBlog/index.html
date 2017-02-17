@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="http://cdn.bootcss.com/jquery/1.12.3/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			loadInfo();
+		});
+		function loadInfo() {
+		  $.getJSON("data.json", function(data) {
+		        //解析数组
+		        $.each(data, function(i, item) {
+		            $("#info").append(
+		            	    +(i+1)+":"+
+		                    "<a style='margin:10px;' href='"+item.line+"'>" + item.no + "</a>");
+		        });
+	        });
+		}
+	</script>
+	<style type="text/css">
+		body a{
+			margin: 10px,10px,0px,0px;
+		}
+	</style>
+</head>
+<body id="info">
+
+</body>
+</html>
