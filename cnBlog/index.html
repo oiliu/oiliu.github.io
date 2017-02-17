@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<meta charset="utf-8">
+	<title>博客园大牛</title>
 	<script src="http://cdn.bootcss.com/jquery/1.12.3/jquery.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
@@ -9,11 +10,13 @@
 		});
 		function loadInfo() {
 		  $.getJSON("data.json", function(data) {
+		  	    var arr =[20,25,26,23,10,15,35];
 		        //解析数组
 		        $.each(data, function(i, item) {
+		  	        var index = Math.floor((Math.random()*arr.length)); 
 		            $("#info").append(
 		            	    +(i+1)+":"+
-		                    "<a style='margin:10px;' href='"+item.line+"'>" + item.no + "</a>");
+		                    "<a style='margin:10px;font-size: "+arr[index]+"px;' href='"+item.line+"'>" + item.no + "</a>");
 		        });
 	        });
 		}
