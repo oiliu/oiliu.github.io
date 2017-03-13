@@ -15,19 +15,14 @@
 		        $.each(data, function(i, item) {
 		  	        var index = Math.floor((Math.random()*arr.length)); 
 		            $("#info").append(
-		            	    +(i+1)+":"+
+		            	    (i+1)+":"+
 		                    "<a style='margin:10px;font-size: "+arr[index]+"px;' href='"+item.line+"'>" + item.no + "</a>");
 		        });
 	        });
 		}
 	</script>
-	<style type="text/css">
-		body a{
-			margin: 10px,10px,0px,0px;
-		}
-	</style>
 </head>
-<body id="info">
+<body id="info" style="background-color: #f5f5d5;">
 
 </body>
 </html>
