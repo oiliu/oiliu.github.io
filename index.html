@@ -1,14 +1,51 @@
 ﻿<!DOCTYPE html>
 <html charset="utf-8">
 <head>
-    <title>PIC</title>
+    <title>史啊强</title>
     <script src="http://cdn.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+    <script src="dal/layer/layer.js"></script>
     <script type="text/javascript">
         $(function(){
             //window.location.href="/dal/";
+            $(".divButtonContent li").each(function(){
+                $(this).click(function(){
+                    window.location.href="/dal/";
+                });
+            });
         });
     </script>
+    <style>
+        html{background-color:#E3E3E3;font-size:14px;color:#000;font-family:'微软雅黑'}a,a:hover{text-decoration:none}
+        .box{padding:20px;background-color:#fff;margin:17px 30px;border-radius:5px}
+        .box a{padding-right:15px}#about_hide{display:none}.layer_text{background-color:#fff;padding:20px}
+        .layer_text p{margin-bottom:10px;text-indent:2em;line-height:23px}.button{display:inline-block;line-height:30px;padding:0 20px;background-color:#56B4DC;color:#fff;font-size:14px;border-radius:3px;cursor:pointer;font-weight:400}
+        .imgTitle{vertical-align:middle;height:60px;width:60px;border-radius:5px;margin:0 20px 0 10px}
+        .divButtonContent{text-align: center;vertical-align:middle;margin: 0 auto;}
+        .divButtonContent li{width: 600px;height: 370.8px;list-style: none; margin: 10px;display: inline-block;box-shadow: 6px 2px 36px #888888}
+        .divButtonContent li img{width: 600px;height: 370.8px;box-shadow: 6px 2px 36px #888888 }
+        
+        #footer {
+            color:black;
+            clear:both;
+            text-align:center;
+            padding:20px 0 0 0;
+            height: 35px;
+            font-size: 15px;
+        }
+    </style>
 </head>
 <body>
+    <div class="box">
+        <h2><img class="imgTitle" src="dal/images/i.png" />风雨丛中住着一只南飞的雁,</h2>
+    </div>
+    <div class="box">
+        <ul class="divButtonContent">
+            <li><img src="dal/images/img/img47.jpg"/></li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="box" id="footer">
+        - -
+    </div>
 </body>
 </html>
